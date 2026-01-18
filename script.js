@@ -60,6 +60,9 @@ function convertCurrency() {
         result.innerText = "الرجاء إدخال مبلغ صحيح";
         return;
     }
+<script>
+document.body.style.zoom = "120%";
+</script>
 
     // التحويل عبر الدولار كمرجع
     const usdAmount = amt / rates[from]; 
@@ -70,3 +73,4 @@ function convertCurrency() {
 
 // تحميل الأسعار عند فتح الصفحة
 fetchRates();
+
