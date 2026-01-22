@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محول العملات Currency Converter</title>
 
-    <!-- اسم الموقع -->
-    <title>BLUE FOX Currency Converter💰</title>
+  
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="_7bWDxFYOvYc3tdI3jmdJdhEga031alKd3bYBA9Khe0">
 
-    <!-- وصف الموقع -->
-    <meta name="description" content="موقع لتحويل عملات كل العالم">
-
-    <!-- Favicon PNG -->
-    <link rel="icon" href="assets/images/imad.png" type="image/png">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="BLUE FOX Currency Converter">
-    <meta property="og:description" content="موقع لتحويل عملات كل العالم">
-    <meta property="og:type" content="website">
-
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="_7bWDxFYOvYc3tdI3jmdJdhEga031alKd3bYBA9Khe0" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محول العملات Currency-Converter</title>
 
-    <div class="container">
-        <h1>محول العملات 🌍💰</h1>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark">
 
-        <div class="converter">
-            <input type="number" id="amount" placeholder="المبلغ" value="1">
+<div class="top-bar">
+  <button class="mode" onclick="toggleMode()">🌙 / ☀️</button>
+  <button class="lang" onclick="toggleLang()">🌐 EN / AR</button>
+</div>
 
-            <select id="fromCurrency">
-                <!-- سيتم ملؤها تلقائيًا -->
-            </select>
+<div class="container">
+  <h1 id="title">🌍 محول العملات</h1>
+  <input type="number" id="amount" placeholder="أدخل المبلغ">
+  <div class="select-box">
+    <select id="from"></select>
+    <span>⇄</span>
+    <select id="to"></select>
+  </div>
+  <button id="convert-btn" onclick="convert()">تحويل</button>
+  <div class="result" id="result"></div>
+  <canvas id="chart"></canvas>
+</div>
 
-            <select id="toCurrency">
-                <!-- سيتم ملؤها تلقائيًا -->
-            </select>
-
-            <button onclick="convertCurrency()">حول الآن</button>
-        </div>
-
-        <div id="result"></div>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
