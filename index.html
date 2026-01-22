@@ -1,44 +1,19 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>محول العملات Currency Converter</title>
-
-  
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="_7bWDxFYOvYc3tdI3jmdJdhEga031alKd3bYBA9Khe0">
-
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>محول العملات Currency-Converter</title>
-
+<title>مترجم عالمي</title>
 <link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="favicon.png">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="dark">
-
-<div class="top-bar">
-  <button class="mode" onclick="toggleMode()">🌙 / ☀️</button>
-  <button class="lang" onclick="toggleLang()">🌐 EN / AR</button>
-</div>
+<body>
 
 <div class="container">
-  <h1 id="title">🌍 محول العملات</h1>
-  <input type="number" id="amount" placeholder="أدخل المبلغ">
-  <div class="select-box">
-    <select id="from"></select>
-    <span>⇄</span>
-    <select id="to"></select>
-  </div>
-  <button id="convert-btn" onclick="convert()">تحويل</button>
-  <div class="result" id="result"></div>
-  <canvas id="chart"></canvas>
+  <h1>🌐 مترجم عالمي</h1>
+  <textarea id="text" placeholder="أدخل الجملة هنا"></textarea>
+  <select id="language"></select>
+  <button onclick="translate()">ترجم</button>
+  <div id="result"></div>
 </div>
 
 <script src="script.js"></script>
