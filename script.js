@@ -1,8 +1,9 @@
 const text = document.getElementById("text");
 const language = document.getElementById("language");
 const result = document.getElementById("result");
+const copyBtn = document.getElementById("copyBtn");
 
-// جميع لغات العالم (يمكن توسيع القائمة)
+// جميع لغات العالم
 const languages = {
   "af":"Afrikaans","sq":"Albanian","am":"Amharic","ar":"Arabic","hy":"Armenian",
   "az":"Azerbaijani","eu":"Basque","be":"Belarusian","bn":"Bengali","bs":"Bosnian",
@@ -34,6 +35,7 @@ for(let code in languages){
 
 // الترجمة الحية أثناء الكتابة
 text.addEventListener("input", translate);
+language.addEventListener("change", translate); // إعادة ترجمة عند تغيير اللغة
 
 async function translate(){
   const t = text.value;
@@ -47,3 +49,12 @@ async function translate(){
     result.innerHTML = "خطأ في الترجمة";
   }
 }
+
+// نسخ الترجمة للوح
+copyBtn.addEventListener("click", () => {
+  if(result.innerHTML){
+    navigator.clipboard.writeText(result.innerHTML);
+    copyBtn.innerHTML = "تم النسخ ✅";
+    setTimeout(()=>copyBtn.innerHTML="نسخ الترجمة",1000);
+  }
+});
