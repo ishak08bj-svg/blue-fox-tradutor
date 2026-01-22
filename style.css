@@ -2,44 +2,52 @@
   box-sizing: border-box;
 }
 
-body {
+body{
   font-family: 'Segoe UI', Tahoma, sans-serif;
   margin:0;
   padding:0;
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
   background: linear-gradient(135deg,#0f2027,#203a43);
   color:#fff;
 }
 
-.container {
+/* الحاوية */
+.container{
   width:400px;
   max-width:90%;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(15px);
   padding:30px;
   border-radius:25px;
-  text-align:center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
   box-shadow:0 20px 40px rgba(0,0,0,0.5);
+  overflow:hidden; /* ← الحل القاطع */
+  text-align:center;
 }
 
-h1 {
+h1{
   margin-bottom:20px;
 }
 
-textarea,
-select,
-button {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+/* كل العناصر داخل الإطار */
+.container textarea,
+.container select,
+.container button{
+  display:block;
+  width:100%;
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  border:none;
+  border-radius:15px;
+  font-size:16px;
 }
 
-
-textarea {
-  height:100px;
+/* textarea */
+textarea{
+  height:110px;
   padding:12px;
   resize:none;
   background: rgba(255,255,255,0.15);
@@ -47,18 +55,20 @@ textarea {
   outline:none;
 }
 
-textarea::placeholder {
+textarea::placeholder{
   color: rgba(255,255,255,0.7);
 }
 
-select {
-  padding:12px;
+/* select */
+select{
   margin-top:15px;
+  padding:12px;
   background: rgba(255,255,255,0.15);
   color:#fff;
 }
 
-button {
+/* buttons */
+button{
   margin-top:10px;
   padding:12px;
   background: linear-gradient(90deg,#00c6ff,#0072ff);
@@ -67,7 +77,7 @@ button {
   transition:0.3s;
 }
 
-button:hover {
+button:hover{
   transform: scale(1.03);
 }
 
@@ -75,17 +85,17 @@ button:hover {
   background:#222;
 }
 
-#result {
+/* result */
+#result{
   margin-top:20px;
-  font-size:18px;
-  background: rgba(255,255,255,0.1);
+  min-height:50px;
   padding:12px;
   border-radius:15px;
-  min-height:50px;
+  background: rgba(255,255,255,0.1);
+  font-size:18px;
 }
 
-/* ===== الوضع النهاري ===== */
-
+/* الوضع النهاري */
 body.light{
   background: linear-gradient(135deg,#f5f7fa,#c3cfe2);
   color:#000;
@@ -105,20 +115,18 @@ body.light textarea::placeholder{
   color: rgba(0,0,0,0.6);
 }
 
-/* ===== هاتف ===== */
-
-@media screen and (max-width:480px){
-  .container {
+/* الهاتف */
+@media (max-width:480px){
+  .container{
     padding:20px;
   }
   textarea,
   select,
-  button {
+  button{
     font-size:14px;
     padding:10px;
   }
-  #result {
+  #result{
     font-size:16px;
   }
 }
-
