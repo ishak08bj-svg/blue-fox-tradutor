@@ -80,6 +80,7 @@ body.light textarea::placeholder{
 
 @media screen and (max-width:480px){
   .container {width:90%; padding:20px;}
-  textarea, select {font-size:14px; padding:10px;}
+  textarea, select {font-size:14px; padding:9px;}
   #result {font-size:16px;}
 }
+
