@@ -33,7 +33,7 @@ for(let code in languages){
   language.innerHTML += `<option value="${code}">${languages[code]}</option>`;
 }
 
-// الترجمة الحية أثناء الكتابة
+// الترجمة الفورية أثناء الكتابة
 text.addEventListener("input", translate);
 language.addEventListener("change", translate); // إعادة ترجمة عند تغيير اللغة
 
@@ -42,11 +42,12 @@ async function translate(){
   const lang = language.value;
   if(!t) { result.innerHTML = ""; return; }
   try{
-    const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(t)}&langpair=auto|${lang}`);
+    const res = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${lang}&dt=t&q=${encodeURIComponent(t)}`);
     const data = await res.json();
-    result.innerHTML = data.responseData.translatedText;
+    result.innerHTML = data[0].map(a=>a[0]).join("");
   } catch(err){
     result.innerHTML = "خطأ في الترجمة";
+    console.error(err);
   }
 }
 
